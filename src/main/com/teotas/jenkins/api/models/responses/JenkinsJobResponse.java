@@ -6,9 +6,11 @@ import com.teotas.jenkins.api.models.objects.JenkinsBuild;
 import com.teotas.jenkins.api.models.objects.JenkinsHealthReport;
 import com.teotas.jenkins.api.models.objects.JenkinsJob;
 import com.teotas.jenkins.api.models.objects.JenkinsProperty;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
+@Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JenkinsJobResponse {
     private String description;
