@@ -25,7 +25,7 @@ and you're good to go!
 
 When you're sifting through the contents of this project, or referencing any of its classes via dot syntax in a smart
 IDE (like IntelliJ), you might notice that there are several *API.java classes you can instantiate, such as JobAPI.
-#####YOU DO NOT NEED TO DIRECTLY INSTANTIATE EACH OF THESE CLASSES WITH A CONNECTION TO USE THEM
+##### YOU DO NOT NEED TO DIRECTLY INSTANTIATE EACH OF THESE CLASSES WITH A CONNECTION TO USE THEM
 The JenkinsAPI class will lazy-load these other APIs as needed. All you have to do is call the right one when you want
 it. Here's an example of what you might want to do and how you might accomplish it with JenkinsAPI:
 
@@ -40,8 +40,8 @@ api classes via the lazy-load. It certainly beats having to do this:
 
 ```java
 JobAPI jobAPI = new JobAPI(connection);
-ViewAPI viewAPI = new viewAPI(connection);
 jobAPI.getJob("my-job");
+ViewAPI viewAPI = new ViewAPI(connection);
 viewAPI.getViews();
 ```
 
