@@ -1,6 +1,6 @@
-#Retrofit Jenkins API Library
+# Retrofit Jenkins API Library
 
-###Summary
+### Summary
 
 This is a light-weight Java wrapper for Jenkins api calls. Using a combination of Retrofit 2.0, Lombok,
 and the not-so-secret api call paths of Jenkins to retrieve View, Job, and Build information (among other things)
