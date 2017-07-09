@@ -9,19 +9,27 @@ import org.apache.commons.codec.binary.Base64;
 import java.io.IOException;
 
 public class JenkinsAuthInterceptor implements Interceptor {
-    private String basicAuth;
+    private String tokenAuth;
 
 
     public JenkinsAuthInterceptor(JenkinsAPIConnection connection){
-        basicAuth = connection.getUserName() + ":" + connection.getUserAuthToken() + "@"; //TODO make sure this is inserted into calls properly, ex: http://[user.name:thisistheapicode@]myjenkins.com
+        tokenAuth = connection.getUserName() + ":" + connection.getUserAuthToken() + "@";
     }
 
     public Response intercept(Chain chain) throws IOException {
         Request original = chain.request();
 
+        String requestURL = original.url().toString();
+        if(requestURL.contains("://")) {
+            requestURL.replace("://", "://" + tokenAuth);
+        } else {
+            requestURL = tokenAuth + requestURL;
+        }
+
         Request.Builder requestBuilder = original.newBuilder()
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json")
+                .url(requestURL)
                 .method(original.method(), original.body());
 
         Request updatedRequest = requestBuilder.build();

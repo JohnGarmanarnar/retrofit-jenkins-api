@@ -15,7 +15,6 @@ public class RetrofitClient {
     }
 
     private static OkHttpClient.Builder getBasicAuthClientBuilder(JenkinsAPIConnection connection){
-        //TODO configure basic auth concat
         JenkinsAuthInterceptor jenkinsAuthInterceptor = new JenkinsAuthInterceptor(connection);
         ResponseInterceptor responseInterceptor = new ResponseInterceptor(connection);
         return new OkHttpClient.Builder()

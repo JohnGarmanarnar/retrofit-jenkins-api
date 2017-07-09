@@ -12,8 +12,7 @@ public class RetrofitFactory {
 
     private static Retrofit.Builder initializeBuilder(Converter.Factory converterFactory) {
         return new Retrofit.Builder()
-                .addConverterFactory(converterFactory)
-                .baseUrl(""); //TODO configurable baseURL for use in anyone's project
+                .addConverterFactory(converterFactory);
     }
 
 }
