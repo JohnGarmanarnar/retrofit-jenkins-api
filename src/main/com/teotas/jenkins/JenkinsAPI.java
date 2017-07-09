@@ -4,9 +4,9 @@ import com.teotas.jenkins.api.JobAPI;
 import com.teotas.jenkins.api.ViewAPI;
 
 public class JenkinsAPI {
-    JenkinsAPIConnection connection;
-    JobAPI jobAPI;
-    ViewAPI viewAPI;
+    private JenkinsAPIConnection connection;
+    private JobAPI jobAPI;
+    private ViewAPI viewAPI;
 
     public JenkinsAPI(JenkinsAPIConnection connection){
         this.connection = connection;
