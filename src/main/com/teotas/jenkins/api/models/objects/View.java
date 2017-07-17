@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class JenkinsHealthReport {
-    private String description;
-    private long score;
+public class View {
+    private String name;
+    private String url;
 }

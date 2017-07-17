@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class JenkinsProperty {
+public class Property {
     @JsonProperty("mentionAll")
     private boolean shouldMentionAll;
     @JsonProperty("notifyAborted")
@@ -27,6 +27,6 @@ public class JenkinsProperty {
     private boolean shouldNotifyOnStart;
 
     private String assignedChatRoom;
-    private ArrayList<JenkinsParameterDefinition> parameterDefinitions;
+    private ArrayList<ParameterDefinition> parameterDefinitions;
 
 }

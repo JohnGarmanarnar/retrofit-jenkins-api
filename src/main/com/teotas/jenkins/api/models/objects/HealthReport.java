@@ -5,9 +5,7 @@ import lombok.Getter;
 
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class JenkinsParameterDefinition {
-    private DefaultJenkinsParameter defaultParameterValue;
+public class HealthReport {
     private String description;
-    private String name;
-    private String type;
+    private long score;
 }

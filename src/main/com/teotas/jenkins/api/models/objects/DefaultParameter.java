@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DefaultJenkinsParameter {
+public class DefaultParameter {
     private String name;
     private String value;
 }

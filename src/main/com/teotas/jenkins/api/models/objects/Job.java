@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class JenkinsJob {
+public class Job {
     private String name;
     private String url;
     private String color;

@@ -1,10 +1,10 @@
 package com.teotas.jenkins;
 
-import com.teotas.jenkins.api.models.objects.JenkinsJob;
-import com.teotas.jenkins.api.models.objects.JenkinsView;
+import com.teotas.jenkins.api.models.objects.View;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.teotas.jenkins.api.models.responses.JenkinsJobResponse;
+import com.teotas.jenkins.api.models.objects.Job;
+import com.teotas.jenkins.api.models.responses.JenkinsJob;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -26,19 +26,19 @@ public class JenkinsAPITest {
 
     @Test
     public void getViews(){
-        ArrayList<JenkinsView> views = jenkins.viewAPI().getViews();
+        ArrayList<View> views = jenkins.viewAPI().getViews();
         assertThat(views.isEmpty()).isFalse();
     }
 
     @Test
     public void getJobs(){
-        ArrayList<JenkinsJob> jobs = jenkins.viewAPI().getJobs("All");
+        ArrayList<Job> jobs = jenkins.viewAPI().getJobs("All");
         assertThat(jobs.isEmpty()).isFalse();
     }
 
     @Test
     public void getJobInfo(){
-        JenkinsJobResponse job = jenkins.jobAPI().getJob("my-job-name");
+        JenkinsJob job = jenkins.jobAPI().getJob("my-job-name");
         assertThat(job.getDisplayName()).isNotEmpty();
     }
 
