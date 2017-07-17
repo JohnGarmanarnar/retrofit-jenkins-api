@@ -41,12 +41,30 @@
     </properties>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>central-releases</id>
-            <name>central releases</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+    <developers>
+        <developer>
+            <id>jgarcia</id>
+            <name>John Garcia</name>
+            <email>john.garcia@teotas.com</email>
+            <organization>teotas</organization>
+            <organizationUrl>http://www.teotas.com</organizationUrl>
+            <roles>
+                <role>Project-Administrator</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>America/Chicago</timezone>
+        </developer>
+    </developers>
 
  <build>
   <plugins>
