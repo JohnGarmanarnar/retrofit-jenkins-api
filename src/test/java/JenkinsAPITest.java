@@ -1,21 +1,21 @@
-package com.teotas.jenkins;
-
+import com.teotas.jenkins.JenkinsAPI;
+import com.teotas.jenkins.JenkinsAPIConnection;
 import com.teotas.jenkins.api.models.objects.JenkinsJob;
 import com.teotas.jenkins.api.models.objects.JenkinsView;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.teotas.jenkins.api.models.responses.JenkinsJobResponse;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class JenkinsAPITest {
+class JenkinsAPITest {
 
     private static JenkinsAPI jenkins;
 
-    @BeforeClass
-    public static void beforeClass(){
+    @BeforeAll
+    private static void beforeClass(){
         JenkinsAPIConnection connection = JenkinsAPIConnection.builder()
                 .jenkinsBaseURL("http://myjenkinsurl.com")
                 .userName("Add.Me")
@@ -25,19 +25,19 @@ public class JenkinsAPITest {
     }
 
     @Test
-    public void getViews(){
+    private void getViews(){
         ArrayList<JenkinsView> views = jenkins.viewAPI().getViews();
         assertThat(views.isEmpty()).isFalse();
     }
 
     @Test
-    public void getJobs(){
+    private void getJobs(){
         ArrayList<JenkinsJob> jobs = jenkins.viewAPI().getJobs("All");
         assertThat(jobs.isEmpty()).isFalse();
     }
 
     @Test
-    public void getJobInfo(){
+    private void getJobInfo(){
         JenkinsJobResponse job = jenkins.jobAPI().getJob("my-job-name");
         assertThat(job.getDisplayName()).isNotEmpty();
     }
