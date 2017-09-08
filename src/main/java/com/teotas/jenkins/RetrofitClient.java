@@ -1,6 +1,5 @@
 package com.teotas.jenkins;
 
-import com.google.common.base.Preconditions;
 import com.teotas.jenkins.interceptors.JenkinsAuthInterceptor;
 import com.teotas.jenkins.interceptors.ResponseInterceptor;
 import lombok.Getter;

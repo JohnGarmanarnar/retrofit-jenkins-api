@@ -4,6 +4,7 @@ import com.teotas.jenkins.JenkinsAPIConnection;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
+
 import java.io.IOException;
 
 public class JenkinsAuthInterceptor implements Interceptor {
