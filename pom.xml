@@ -8,7 +8,7 @@
     <description>retrofit wrapper for jenkins api calls</description>
     <groupId>com.teotas</groupId>
     <artifactId>jenkins-api</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3</version>
     <packaging>jar</packaging>
     <url>https://github.com/Garce78/retrofit-jenkins-api</url>
 
